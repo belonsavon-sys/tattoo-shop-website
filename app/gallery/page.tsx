@@ -12,16 +12,17 @@ type TattooItem = {
   id: string;
   title: string;
   style: Exclude<Filter, "All">;
-  artist: string;
+  artistName: string;
+  artistSlug: string;
 };
 
 const ITEMS: TattooItem[] = [
-  { id: "1", title: "Blackwork Rose", style: "Black & Grey", artist: "Artist A" },
-  { id: "2", title: "Fine Line Butterfly", style: "Fine Line", artist: "Artist B" },
-  { id: "3", title: "Traditional Dagger", style: "Traditional", artist: "Artist A" },
-  { id: "4", title: "Script Lettering", style: "Lettering", artist: "Artist C" },
-  { id: "5", title: "Portrait Study", style: "Black & Grey", artist: "Artist B" },
-  { id: "6", title: "Minimal Flower", style: "Fine Line", artist: "Artist A" },
+  { id: "1", title: "Blackwork Rose", style: "Black & Grey", artistName: "Artist A", artistSlug: "artist-a" },
+  { id: "2", title: "Fine Line Butterfly", style: "Fine Line", artistName: "Artist B", artistSlug: "artist-b" },
+  { id: "3", title: "Traditional Dagger", style: "Traditional", artistName: "Artist A", artistSlug: "artist-a" },
+  { id: "4", title: "Script Lettering", style: "Lettering", artistName: "Artist C", artistSlug: "artist-c" },
+  { id: "5", title: "Portrait Study", style: "Black & Grey", artistName: "Artist B", artistSlug: "artist-b" },
+  { id: "6", title: "Minimal Flower", style: "Fine Line", artistName: "Artist A", artistSlug: "artist-a" },
 ];
 
 export default function GalleryPage() {
@@ -38,7 +39,7 @@ export default function GalleryPage() {
           Gallery
         </h1>
         <p className="max-w-2xl text-sm text-zinc-400">
-          A selection of fresh work. Next: real images, artist pages, and healed vs fresh filters.
+          A selection of fresh work. Next: real images, healed vs fresh, and gallery management.
         </p>
       </section>
 
@@ -68,13 +69,29 @@ export default function GalleryPage() {
           <Card key={item.id} className="border-zinc-800 bg-black">
             <CardContent className="p-5">
               <div className="aspect-[4/3] w-full rounded-xl border border-zinc-800 bg-zinc-950" />
+
               <div className="mt-4">
                 <div className="text-sm font-semibold text-zinc-100">
                   {item.title}
                 </div>
+
                 <div className="mt-1 text-xs text-zinc-400">
-                  {item.style} • {item.artist}
+                  {item.style} •{" "}
+                  <a
+                    className="underline hover:text-white"
+                    href={`/artists/${item.artistSlug}`}
+                  >
+                    {item.artistName}
+                  </a>
                 </div>
+              </div>
+
+              <div className="mt-4 flex gap-2">
+                <a href="/booking" className="w-full">
+                  <Button className="w-full bg-white text-black hover:bg-zinc-200">
+                    Request Booking
+                  </Button>
+                </a>
               </div>
             </CardContent>
           </Card>
