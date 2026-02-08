@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tattoo Shop",
-  description: "Dark minimal tattoo shop website with artists, gallery, booking, and aftercare.",
+  title: "Ghost Town Tattoo — Elma, WA",
+  description:
+    "Ghost Town Tattoo in Elma, WA. Dark minimal tattoo studio website with artists, gallery, booking, and aftercare.",
 };
 
 export default function RootLayout({
@@ -22,13 +23,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const year = new Date().getFullYear();
+
   return (
     <html lang="en" className="dark">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-zinc-100`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-zinc-100`}
+      >
         <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-black/60 backdrop-blur">
           <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
             <a href="/" className="font-semibold tracking-tight text-zinc-100">
-              Tattoo Shop
+              Ghost Town
             </a>
 
             <nav className="hidden gap-6 text-sm text-zinc-300 md:flex">
@@ -58,7 +63,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        <div className="mx-auto max-w-6xl px-4 py-10 min-h-[calc(100vh-64px)]">
+        <div className="mx-auto min-h-[calc(100vh-64px)] max-w-6xl px-4 py-10">
           {children}
         </div>
 
@@ -66,40 +71,61 @@ export default function RootLayout({
           <div className="mx-auto max-w-6xl px-4 py-10">
             <div className="grid gap-6 md:grid-cols-3">
               <div className="space-y-2">
-                <div className="text-sm font-semibold text-zinc-100">Tattoo Shop</div>
+                <div className="text-sm font-semibold text-zinc-100">Ghost Town</div>
                 <p className="text-sm text-zinc-400">
-                  Dark, minimal, custom work. Built for healed results.
+                  Elma, WA • Open daily 12pm–7pm
+                </p>
+                <p className="text-sm text-zinc-400">
+                  <a className="underline hover:text-white" href="tel:3606602460">
+                    (360) 660-2460
+                  </a>
                 </p>
               </div>
 
               <div className="space-y-2">
                 <div className="text-sm font-semibold text-zinc-100">Quick Links</div>
                 <div className="flex flex-col gap-2 text-sm text-zinc-400">
-                  <a className="hover:text-white" href="/booking">Booking</a>
-                  <a className="hover:text-white" href="/gallery">Gallery</a>
-                  <a className="hover:text-white" href="/aftercare">Aftercare</a>
-                  <a className="hover:text-white" href="/contact">Contact</a>
+                  <a className="hover:text-white" href="/booking">
+                    Booking
+                  </a>
+                  <a className="hover:text-white" href="/gallery">
+                    Gallery
+                  </a>
+                  <a className="hover:text-white" href="/aftercare">
+                    Aftercare
+                  </a>
+                  <a className="hover:text-white" href="/contact">
+                    Contact
+                  </a>
                 </div>
               </div>
 
               <div className="space-y-2">
                 <div className="text-sm font-semibold text-zinc-100">Social</div>
                 <div className="flex flex-col gap-2 text-sm text-zinc-400">
-                  <a className="hover:text-white" href="https://instagram.com/" target="_blank" rel="noreferrer">
+                  <a
+                    className="hover:text-white"
+                    href="https://www.instagram.com/ghosttowntattooelma/?hl=en"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Instagram
                   </a>
-                  <a className="hover:text-white" href="https://tiktok.com/" target="_blank" rel="noreferrer">
-                    TikTok
+                  <a
+                    className="hover:text-white"
+                    href="https://www.facebook.com/Ghosttowntattooelma/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Facebook
                   </a>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 flex flex-col gap-2 border-t border-zinc-900 pt-6 text-xs text-zinc-500 md:flex-row md:items-center md:justify-between">
-              <div>© {new Date().getFullYear()} Tattoo Shop. All rights reserved.</div>
-              <div>
-                Built with Next.js • Dark minimal UI
-              </div>
+              <div>© {year} Ghost Town. All rights reserved.</div>
+              <div>Built with Next.js • Dark minimal UI</div>
             </div>
           </div>
         </footer>

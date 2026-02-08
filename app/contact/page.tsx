@@ -9,7 +9,7 @@ export default function ContactPage() {
           Contact
         </h1>
         <p className="max-w-2xl text-sm text-zinc-400">
-          Questions, walk-in availability, or booking help — reach out and we’ll respond as soon as possible.
+          Walk-in availability and booking questions — reach out or submit a booking request.
         </p>
       </section>
 
@@ -22,31 +22,36 @@ export default function ContactPage() {
               <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
                 <div className="text-sm font-semibold text-zinc-100">Address</div>
                 <div className="mt-2 text-sm text-zinc-300">
-                  123 Main St
+                  307 W Main St
                   <br />
-                  Your City, ST 00000
+                  Elma, WA
+                </div>
+                <div className="mt-3">
+                  <a
+                    className="text-sm underline text-zinc-400 hover:text-white"
+                    href="https://www.google.com/maps/search/?api=1&query=307%20W%20Main%20St%2C%20Elma%2C%20WA"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open in Google Maps
+                  </a>
                 </div>
               </div>
 
               <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
                 <div className="text-sm font-semibold text-zinc-100">Hours</div>
                 <div className="mt-2 text-sm text-zinc-300">
-                  Mon–Fri: 12pm–7pm
-                  <br />
-                  Sat: 12pm–6pm
-                  <br />
-                  Sun: Closed
+                  Open daily: 12pm–7pm
                 </div>
               </div>
 
-              <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
+              <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4 md:col-span-2">
                 <div className="text-sm font-semibold text-zinc-100">Phone</div>
-                <div className="mt-2 text-sm text-zinc-300">(555) 555-5555</div>
-              </div>
-
-              <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
-                <div className="text-sm font-semibold text-zinc-100">Email</div>
-                <div className="mt-2 text-sm text-zinc-300">shop@email.com</div>
+                <div className="mt-2 text-sm text-zinc-300">
+                  <a className="underline hover:text-white" href="tel:3606602460">
+                    (360) 660-2460
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -57,7 +62,11 @@ export default function ContactPage() {
                 </Button>
               </a>
 
-              <a href="https://instagram.com/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.instagram.com/ghosttowntattooelma/?hl=en"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button
                   variant="outline"
                   className="border-zinc-800 text-zinc-200 hover:bg-zinc-950"
@@ -66,18 +75,22 @@ export default function ContactPage() {
                 </Button>
               </a>
 
-              <a href="https://tiktok.com/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.facebook.com/Ghosttowntattooelma/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button
                   variant="outline"
                   className="border-zinc-800 text-zinc-200 hover:bg-zinc-950"
                 >
-                  TikTok
+                  Facebook
                 </Button>
               </a>
             </div>
 
             <p className="text-xs text-zinc-500">
-              Next step: embed Google Maps + add clickable phone/email links.
+              Email: N/A • For appointments, please use the booking request form.
             </p>
           </CardContent>
         </Card>
@@ -86,15 +99,15 @@ export default function ContactPage() {
           <CardContent className="p-6 space-y-4">
             <h2 className="text-lg font-semibold text-zinc-100">Quick notes</h2>
             <ul className="space-y-2 text-sm text-zinc-300">
-              <li>• Walk-ins are limited and depend on availability.</li>
-              <li>• For custom pieces, bring 2–3 references if possible.</li>
+              <li>• Walk-ins depend on availability.</li>
+              <li>• For customs, bring 2–3 references if possible.</li>
               <li>• Deposits are required to confirm appointments.</li>
               <li>• Please arrive on time.</li>
             </ul>
 
             <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
               <p className="text-sm text-zinc-300">
-                If you’re unsure about size or placement, submit a booking request and we’ll guide you.
+                Not sure about size or placement? Submit a booking request and we’ll guide you.
               </p>
             </div>
           </CardContent>
