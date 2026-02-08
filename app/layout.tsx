@@ -58,7 +58,51 @@ export default function RootLayout({
           </div>
         </header>
 
-        <div className="mx-auto max-w-6xl px-4 py-10">{children}</div>
+        <div className="mx-auto max-w-6xl px-4 py-10 min-h-[calc(100vh-64px)]">
+          {children}
+        </div>
+
+        <footer className="border-t border-zinc-900 bg-black">
+          <div className="mx-auto max-w-6xl px-4 py-10">
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="space-y-2">
+                <div className="text-sm font-semibold text-zinc-100">Tattoo Shop</div>
+                <p className="text-sm text-zinc-400">
+                  Dark, minimal, custom work. Built for healed results.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="text-sm font-semibold text-zinc-100">Quick Links</div>
+                <div className="flex flex-col gap-2 text-sm text-zinc-400">
+                  <a className="hover:text-white" href="/booking">Booking</a>
+                  <a className="hover:text-white" href="/gallery">Gallery</a>
+                  <a className="hover:text-white" href="/aftercare">Aftercare</a>
+                  <a className="hover:text-white" href="/contact">Contact</a>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="text-sm font-semibold text-zinc-100">Social</div>
+                <div className="flex flex-col gap-2 text-sm text-zinc-400">
+                  <a className="hover:text-white" href="https://instagram.com/" target="_blank" rel="noreferrer">
+                    Instagram
+                  </a>
+                  <a className="hover:text-white" href="https://tiktok.com/" target="_blank" rel="noreferrer">
+                    TikTok
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-2 border-t border-zinc-900 pt-6 text-xs text-zinc-500 md:flex-row md:items-center md:justify-between">
+              <div>© {new Date().getFullYear()} Tattoo Shop. All rights reserved.</div>
+              <div>
+                Built with Next.js • Dark minimal UI
+              </div>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
