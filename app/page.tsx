@@ -1,96 +1,93 @@
-  export default function Home() {
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function Home() {
   return (
-    <main style={{ padding: 24 }}>
+    <main className="space-y-10">
       {/* HERO */}
-      <section style={{ padding: "48px 0" }}>
-        <h1 style={{ fontSize: 44, lineHeight: 1.1, marginBottom: 12 }}>
-          Tattoo work that looks better every year.
-        </h1>
+      <section className="pt-6">
+        <div className="rounded-2xl border border-zinc-800 bg-gradient-to-b from-zinc-950 to-black p-8 md:p-12">
+          <p className="text-xs uppercase tracking-widest text-zinc-400">
+            Dark • Minimal • Custom
+          </p>
 
-        <p style={{ fontSize: 18, maxWidth: 700, marginBottom: 24, opacity: 0.9 }}>
-          Clean lines, bold black & grey, and custom pieces designed for your body.
-          View portfolios, learn aftercare, and request a booking — all in one place.
-        </p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-zinc-100 md:text-5xl">
+            Tattoos designed to fit your body — and age well.
+          </h1>
 
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-          <a
-            href="/booking"
-            style={{
-              padding: "12px 16px",
-              border: "1px solid #222",
-              borderRadius: 10,
-              fontWeight: 700,
-              textDecoration: "none",
-              display: "inline-block",
-            }}
-          >
-            Request a Booking
-          </a>
+          <p className="mt-4 max-w-2xl text-zinc-300">
+            Clean linework, bold black & grey, and custom pieces built around placement.
+            Browse portfolios, learn aftercare, and request a booking in minutes.
+          </p>
 
-          <a
-            href="/gallery"
-            style={{
-              padding: "12px 16px",
-              border: "1px solid #222",
-              borderRadius: 10,
-              textDecoration: "none",
-              display: "inline-block",
-            }}
-          >
-            View Gallery
-          </a>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="/booking">
+              <Button className="bg-white text-black hover:bg-zinc-200">
+                Request Booking
+              </Button>
+            </a>
 
-          <a
-            href="/aftercare"
-            style={{
-              padding: "12px 16px",
-              border: "1px solid #222",
-              borderRadius: 10,
-              textDecoration: "none",
-              display: "inline-block",
-            }}
-          >
-            Aftercare Guide
-          </a>
+            <a href="/gallery">
+              <Button variant="outline" className="border-zinc-700 text-zinc-100">
+                View Gallery
+              </Button>
+            </a>
+
+            <a href="/aftercare">
+              <Button variant="ghost" className="text-zinc-300 hover:text-white">
+                Aftercare
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* QUICK INFO */}
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: 16,
-          marginTop: 24,
-        }}
-      >
-        <div style={{ border: "1px solid #222", borderRadius: 12, padding: 16 }}>
-          <h2 style={{ fontSize: 18, marginBottom: 8 }}>Walk-ins</h2>
-          <p style={{ margin: 0, opacity: 0.9 }}>
-            Limited walk-ins based on artist availability.
-          </p>
-        </div>
+      <section className="grid gap-4 md:grid-cols-4">
+        {[
+          { title: "Walk-ins", desc: "Limited based on artist availability." },
+          { title: "Custom Work", desc: "We refine your idea for placement and flow." },
+          { title: "Clean & Safe", desc: "Strict sanitation and single-use supplies." },
+          { title: "Deposits", desc: "Secure your appointment and design time." },
+        ].map((x) => (
+          <Card key={x.title} className="border-zinc-800 bg-black">
+            <CardContent className="p-5">
+              <div className="text-sm font-semibold text-zinc-100">{x.title}</div>
+              <div className="mt-2 text-sm text-zinc-400">{x.desc}</div>
+            </CardContent>
+          </Card>
+        ))}
+      </section>
 
-        <div style={{ border: "1px solid #222", borderRadius: 12, padding: 16 }}>
-          <h2 style={{ fontSize: 18, marginBottom: 8 }}>Custom Work</h2>
-          <p style={{ margin: 0, opacity: 0.9 }}>
-            Bring your idea — we’ll refine and design it for placement.
-          </p>
-        </div>
+      {/* START HERE */}
+      <section className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+        <h2 className="text-lg font-semibold text-zinc-100">Start here</h2>
 
-        <div style={{ border: "1px solid #222", borderRadius: 12, padding: 16 }}>
-          <h2 style={{ fontSize: 18, marginBottom: 8 }}>Clean & Safe</h2>
-          <p style={{ margin: 0, opacity: 0.9 }}>
-            Strict sanitation standards and single-use supplies.
-          </p>
-        </div>
+        <ol className="mt-3 space-y-2 text-sm text-zinc-300">
+          <li>
+            1) Browse the{" "}
+            <a className="underline hover:text-white" href="/gallery">
+              gallery
+            </a>{" "}
+            and pick a style.
+          </li>
 
-        <div style={{ border: "1px solid #222", borderRadius: 12, padding: 16 }}>
-          <h2 style={{ fontSize: 18, marginBottom: 8 }}>Deposits</h2>
-          <p style={{ margin: 0, opacity: 0.9 }}>
-            Deposits secure your appointment and cover design time.
-          </p>
-        </div>
+          <li>
+            2) Choose an artist on the{" "}
+            <a className="underline hover:text-white" href="/artists">
+              artists
+            </a>{" "}
+            page.
+          </li>
+
+          <li>
+            3) Submit a request on the{" "}
+            <a className="underline hover:text-white" href="/booking">
+              booking
+            </a>{" "}
+            page.
+          </li>
+        </ol>
       </section>
     </main>
   );
